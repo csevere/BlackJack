@@ -136,7 +136,7 @@ html, body, .container{
   margin: 10px;
   width: 16.6%;
   float: left;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 8%;
 
   /*margin-top: -262px;
@@ -171,6 +171,8 @@ html, body, .container{
   transform: rotate(11deg);
 }
 
-/*card img{
-  height:120px;
-}*/
+.card img{
+  height:139px;
+  width:103px;
+  border-radius: 9%;
+}

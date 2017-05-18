@@ -165,7 +165,7 @@ $(document).ready(function(){
 		// i.e., find the element that we want to put the image in
 		var slotForCard = '.' + who + '-cards .card-' + where;
 		// console.log(slotForCard);
-		imageTag = '<img src="images/cards/'+what+'.png">';
+		imageTag = '<img src="cards/'+what+'.png">';
 		$(slotForCard).html(imageTag)
 		$(slotForCard).addClass('dealt')
 	}
