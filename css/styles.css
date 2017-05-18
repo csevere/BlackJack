@@ -1,4 +1,176 @@
-.col-sm-12{
-
-  color: blue; 
+.title{
+  font-family: 'Asset', cursive;
+  color: gold;
+  position: fixed;
+  font-style: oblique;
+  background: rgba(0, 0, 0, 0.3);
 }
+
+
+
+.the-table{
+  background: url('https://ak8.picdn.net/shutterstock/videos/743893/thumb/7.jpg') center center fixed;
+  background-size: cover;
+  border: 2px solid brown;
+  border-radius: 10px;
+  margin-top: 93px;
+  padding: -5px 0px 70px;
+  margin-left: -3px;
+  border-style: ridge;
+  height:532px;
+  margin-right: 3px;
+
+
+
+}
+
+html, body, .container{
+    height: 100%;
+    min-width: 100%;
+
+}
+
+
+.container{
+    background: url('http://s3.amazonaws.com/lbn-s3/2016/12/01140239/shutterstock_102526172.jpg') no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+
+.chips img{
+  display:block;
+  width: 100px;
+}
+
+#chip4{
+  position: relative;
+  left: 245px;
+  top: 6px;
+}
+
+#chip3{
+  position: relative;
+  left: 177px;
+  top: 68px;
+}
+
+#chip2{
+  position: relative;
+  left: 132px;
+  top: 101px;
+}
+
+#chip1{
+  position: relative;
+  left: 110px;
+  top: 121px;
+}
+
+#chipx{
+  position: relative;
+  left: 104px;
+  top: 63px;
+}
+
+.btn{
+  position: relative;
+  bottom: 129px;
+  width:76px;
+  height: 61px;
+  color: white;
+  box-shadow: inset 0px -8px 0px 12px rgba(0,0,0,0.2), -10px 3px 0px 0px rgba(0,0,0,0.19);
+  border-style: groove;
+  background-color: rgb(64, 64, 64);
+  border: 3px solid black;
+  left: 95px;
+
+}
+
+.deal-button:hover{
+  background-color: rgb(64, 64, 64);
+  color: white;
+}
+
+.disabled{
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.double-button{
+  position: relative;
+  /*bottom: 532px;*/
+  top: -560px;
+  margin-left: -95px;
+
+}
+
+.player-total{
+  font-family: 'Asset', cursive;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  position:relative;
+  top: -360px;
+  left: 254px;
+}
+
+.total-amount{
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-size: 25px;
+  position: relative;
+  left: 96px;
+  bottom: 17px;
+
+
+}
+
+
+
+.card{
+  height: 141px;
+  background-color: #fff;
+  color: black;
+  margin: 10px;
+  width: 16.6%;
+  float: left;
+  border: 2px solid black;
+  border-radius: 8%;
+
+  /*margin-top: -262px;
+  margin-left: 101px;*/
+
+}
+
+.card-1{
+  margin-top: -262px;
+  margin-left: 101px;
+  transform: rotate(-17deg);
+
+}
+
+
+
+.card-2{
+  margin-top: -295px;
+  margin-left: 163px;
+  transform: rotate(-10deg);
+}
+
+.card-3{
+  margin-top: -286px;
+  margin-left: 237px;
+  transform: rotate(3deg);
+}
+
+.card-4{
+  margin-top: -257px;
+  margin-left: 305px;
+  transform: rotate(11deg);
+}
+
+/*card img{
+  height:120px;
+}*/

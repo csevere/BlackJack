@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>BlackJack in jQuery/Javascript</title>
-
+  <link href="https://fonts.googleapis.com/css?family=Asset|Modak|Lato|Sigmar+One" rel="stylesheet">
   <link rel="stylesheet" type ="text/css" href="css/styles.css"/>
   <link rel="stylesheet" type ="text/css" href="css/bootstrap.min.css"/>
 
@@ -16,16 +16,120 @@
 
 </head>
 <body>
+
+<!-- Layout -->
+<!-- 1.create an element for our table
+1a. Make it green.
+1b. Give it a white border
+2 Create an element for the dealer's hand and the player's hand
+3.Create an element for dealer's total and the player's total
+4. Create an element for each card in each hand, max of 6 cards
+7. Make a deal, hit, and stand button.  -->
+
+
+
   <div class = "container">
-      <div class = "row">
-          <div class = "col-sm-12">
-            <h1>Sanity check</h1>
 
+      <!-- <div id ="background-wrap">
+          <div class = "img-center">
+              <img src = "./Images/casino-mainbg.jpg" id = "bg" alt ="" />
           </div>
+      </div> -->
 
+      <div class = "title">
+        <h1>BLACK JACK</h1>
       </div>
 
+      <div class = "row">
+          <div class = "col-sm-12 the-table">
+
+              <div class = "row">
+                  <div class = "col-sm-2">
+                    <div class = "chips" id = "chipx">
+                        <img src="./Images/pokerchip_1.png">
+                    </div>
+                  </div>
+              </div>
+
+              <div class = "row">
+                <div class = "col-sm-2">
+                  <div class = "chips" id = "chip1">
+                      <img src="./Images/pokerchip_1.png">
+                  </div>
+                </div>
+              </div>
+
+
+              <div class = "row">
+                <div class = "col-sm-2">
+                  <div class = "chips" id = "chip2">
+                      <img src="./Images/pokerchip_5.png">
+                  </div>
+                </div>
+              </div>
+
+              <div class = "row">
+                <div class = "col-sm-2">
+                  <div class = "chips" id = "chip3">
+                      <img src="./Images/pokerchip_100.png">
+                  </div>
+                </div>
+              </div>
+
+              <div class = "row">
+                <div class = "col-sm-2">
+                  <div class = "chips" id = "chip4">
+                      <img src="./Images/pokerchip_500.png">
+                      <div class = "total-amount" value = "2500">
+                        $2500
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class = "row">
+                <!-- This is will hold dealer total, and all 6 dealer cards -->
+                <div class = "col-sm-12 player-hand-wrapper">
+                    <!-- This is will hold the dealer's total cards (sum of all cards) -->
+                    <div class = "col-sm-2 player-total">
+                       0
+                    </div>
+
+                    <div class = "col-sm-6 player-cards">
+                      <!-- This is 10 cold wide, will divide it up -->
+                      <div class = "card card-1"></div>
+                      <div class = "card card-2"></div>
+                      <div class = "card card-3"></div>
+                      <div class = "card card-4"></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+              <div class = "row">
+                  <div class = "col-sm-2 col-sm-offset-3">
+                      <button class = "btn deal-button">Deal </button>
+                  </div>
+
+                  <div class = "col-sm-2 col-sm-offset-1">
+                      <button class = "btn hit-button">Hit</button>
+                  </div>
+
+                  <div class = "col-sm-2 col-sm-offset-1">
+                      <button class = "btn stand-button">Stand</button>
+                  </div>
+
+                  <div class = "col-sm-2 col-sm-offset-1">
+                      <button class = "btn double-button" id = "double">double</button>
+                  </div>
+
+              </div>
+
+            </div>
+
+      </div>
   </div>
-  <h1></h1>
+
 </body>
 </html>
