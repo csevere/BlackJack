@@ -12,14 +12,24 @@ $(document).ready(function(){
 	var theDeck = freshDeck.slice();
 	var currentPlayerTotal = Number($('.total-amount').attr('value'));
 	var betAmount = Number($('.bet-amount').attr('value'));
+	$('.hit-button').css("visibility", "hidden");
+	$('.stand-button').css("visibility", "hidden");
+	$('.double-button').css("visibility", "hidden");
+
+	//hide the cards at start of game
+	$('.card').css("visibility", "hidden");
+	$('.message').text("Place your bets!");
+
+
 
 	/////////////////////////
 	//////EVENT HANDLERS/////
 	/////////////////////////
 	$('.deal-button').click(function(){
 		// $('.message').text("Place your bets!");
-
-
+		$('.card-1').css("visibility", "visible");
+		$('.card-2').css("visibility", "visible");
+		// $('#d2').css("visibility", "visible");
 
 
 		// The deal stuff happens here...
@@ -32,7 +42,13 @@ $(document).ready(function(){
 
 		// $('.message').text('Shuffling the cards...').fadeout();
 
-		$('.message').text("Place your bets!");
+
+		$('.hit-button').css("visibility", "visible");
+		$('.stand-button').css("visibility", "visible");
+		$('.double-button').css("visibility", "visible");
+		$('.deal-button').css("visibility", "hidden");
+
+
 
 
 
@@ -50,18 +66,27 @@ $(document).ready(function(){
 
 		setTimeout(function(){placeCard('player',2,playersHand[1]);},1600)
 
-		setTimeout(function(){placeCard('dealer',1,dealersHand[0]);},800)
+		// setTimeout(function(){placeCard('dealer',1,dealersHand[0]);},800)
 		setTimeout(function(){placeCard('dealer',2,dealersHand[1]);},2000)
 
 
 
 		calculateTotal(playersHand,'player');
-		calculateTotal(dealersHand,'dealer');
+		// calculateTotal(dealersHand,'dealer');
 
 
 	});
 
 	$('.hit-button').click(function(){
+
+		$('.card-3').css("visibility", "visible");
+		setTimeout(function(){placeCard('dealer',1,dealersHand[0]);},800)
+		calculateTotal(dealersHand,'dealer');
+
+		//if-else statements
+
+
+
 		// Hit functionallity...
 		// Player wants a new card. This means:
 		// 1. shift OFF of theDeck
@@ -73,15 +98,24 @@ $(document).ready(function(){
 			playersHand.push(theDeck.shift()); //This covers 1 & 2
 			var lastCardIndex = playersHand.length - 1;
 			var slotForNewCard = playersHand.length;
+
+			$('.card-4').css("visibility", "visible");
+			$('#d4').css("visibility", "hidden");
+
 			placeCard('player',slotForNewCard,playersHand[lastCardIndex]); //3
 			calculateTotal(playersHand, 'player'); //4
 		}
 	});
 
+
+
+
 	$('.stand-button').click(function(){
 		// On click stand...
 		// Player has given control over the dealer.
 		// Dealer MUST hit until dealer has 17 or more
+		setTimeout(function(){placeCard('dealer',1,dealersHand[0]);},800)
+		$('#d3').css("visibility", "visible");
 		var dealerTotal = calculateTotal(dealersHand,'dealer');
 		while(dealerTotal < 17){
 			// Hit works the same...
@@ -101,6 +135,31 @@ $(document).ready(function(){
 	//////////////UTILITY FUNCTIONS//////////////////
 	/////////////////////////////////////////////////
 	function reset(){
+		//reset the chips
+		$('#chip4').click(function(){
+			var chip4 = Number($('#chip4').attr('value'));
+			console.log(chip4);
+		});
+
+		$('#chip3').click(function(){
+			var chip3 = Number($('#chip3').attr('value'));
+			console.log(chip3);
+		});
+
+
+		$('#chip2').click(function(){
+			var chip2 = Number($('#chip2').attr('value'));
+			console.log(chip2);
+		});
+
+
+		$('#chip1').click(function(){
+			var chip1 = Number($('#chip1').attr('value'));
+			console.log(chip1);
+		});
+
+
+
 		// In order to reset the game, we need to:
 		// 1. Reset the deck.
 		$('.message').text("Place your bets!");
@@ -114,6 +173,17 @@ $(document).ready(function(){
 		// 4. Reset the totals for both players
 		$('.dealer-total-number').html('0')
 		$('.player-total-number').html('0')
+
+
+
+
+		// Number($('#chip3').attr('value'))
+		// Number($('#chip2').attr('value'));
+		// Number($('#chip1').attr('value'))
+
+
+
+
 		$('.message').text('');
 
 	}
@@ -123,31 +193,58 @@ $(document).ready(function(){
 		// var currentPlayerTotal = Number($('.total-amount').attr('value'));
 		// var betAmount = Number($('.bet-amount').attr('value'));
 		var newPlayerTotal
+		var newBetAmount
 
 
 		var playerTotal = calculateTotal(playersHand, 'player');
 		var dealerTotal = calculateTotal(dealersHand, 'dealer'); //4
 		var winner = "";
+
+		$('.hit-button').css("visibility", "hidden");
+		$('.stand-button').css("visibility", "hidden");
+		$('.double-button').css("visibility", "hidden");
+		$('.deal-button').css("visibility", "visible");
+
+		// $('.card').css("visibility", "hidden");
+
+		('.card-1').css("visibility", "visible");
+		('.card-2').css("visibility", "visible");
+		('.card-3').css("visibility", "visible");
+		('.card-4').css("visibility", "visible");
+
+
+
+			$('#d1').css("visibility", "visible");
+			$('#d2').css("visibility", "visible");
+			$('#d3').css("visibility", "visible");
+
+
+
+
 		// If Player has more than 21. Player Busts.
 		if(playerTotal > 21){
-			winner = "You have busted. Dealer wins. Bye-bye ";
+			winner = "You have busted. Dealer wins. Bye-bye, ";
 			newPlayerTotal = currentPlayerTotal -= betAmount;
-			console.log(newPlayerTotal);
+			console.log(betAmount);
 
 		}else if(dealerTotal > 21){
-			winner = "Dealer has busted. You win! Yeah, hello sweet ";
+			winner = "Dealer has busted. You win! Yeah, hello, sweet ";
 			newPlayerTotal = currentPlayerTotal += betAmount;
+
 			console.log(newPlayerTotal);
+			console.log(betAmount);
 
 		}else{
 			// Neither player has busted. See who won...
 			if(playerTotal > dealerTotal){
-				winner = "You beat the dealer! Yeah, hello sweet ";
+				winner = "You beat the dealer! Yeah, hello, sweet ";
 				newPlayerTotal = currentPlayerTotal += betAmount;
 				console.log(newPlayerTotal);
+				console.log(betAmount);
 			}else if(playerTotal < dealerTotal){
-				winner = "The dealer won! Bye-bye ";
+				winner = "The dealer won! Bye-bye, ";
 				newPlayerTotal = currentPlayerTotal -= betAmount;
+				console.log(betAmount);
 				console.log(newPlayerTotal);
 			}else{
 				winner = "PUSH"
@@ -156,8 +253,11 @@ $(document).ready(function(){
 
 			}
 		}
-		$('.message').text(winner + "$" + betAmount + "!");
+		$('.message').text(winner + "$" + betAmount + "!" + " Place your bets.");
 		$('.text1').text('$' + newPlayerTotal);
+
+		// $('.text2').text('$' + "0")
+
 		// $('.message').text("Won " + newPlayerTotal "!");
 
 	}
@@ -195,14 +295,18 @@ $(document).ready(function(){
 		return totalHandValue;
 	}
 
-	function placeCard(who, where, what){
+	function placeCard(who, where, what, dcard){
 		// Find the DOM element, based on the args, that we want to change
 		// i.e., find the element that we want to put the image in
 		var slotForCard = '.' + who + '-cards .card-' + where;
 		// console.log(slotForCard);
-		imageTag = '<img src="cards/'+what+'.png">';
+		var imageTag = '<img src="cards/'+what+'.png">';
+
 		$(slotForCard).html(imageTag)
 		$(slotForCard).addClass('dealt')
+		// $('.card').animate({
+		// 		left: '40px';
+		// })
 	}
 
 
@@ -359,19 +463,22 @@ $('.double-button').click(function(){
 		var doubleBet
 		var doubleTotal
 
-	if(currentPlayerTotal <= 0){
-		$('.message').text('You are out of money, fool! Play and win some more!');
-		$('.text1').text('$' + '0');
+	if(currentPlayerTotal < betAmount){
+		$('.message').text('Not enough money, fool! Play and win some more!');
+		// $('.text1').text('$' + '0');
 		$('.double-button').off("click");
-		doubleTotal = 0;
+		doubleTotal = currentPlayerTotal;
 		doubleBet = betAmount;
 
 	}else{
-		doubleBet = betAmount * 2;
-		doubleTotal = currentPlayerTotal -=(betAmount * 2);
+		doubleTotal = Number(currentPlayerTotal -= betAmount);
+		doubleBet = Number(betAmount += betAmount);
+
 		}
 		$('.text1').text('$' + doubleTotal);
 		$('.text2').text('$' + doubleBet);
+
+	$('.double-button').css("visibility", "hidden");
 
 
 });

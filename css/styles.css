@@ -20,8 +20,9 @@ html{
   font-size: 30px;
   position: relative;
   top: 43px;
-  left:559px;
+  left:-427px;
   font-family:'Bree Serif', serif;
+  text-align: right;
 }
 
 
@@ -164,7 +165,7 @@ body, .container{
 .card{
   height: 141px;
   width: 150px;
-  background-color: #fff;
+  background: url('http://www.wallpaperawesome.com/wallpapers-awesome/wallpapers-iphone-5-apple-640-x-1136-awesome/thumbnails/wallpaper-iphone-5-s-symbols-playing-cards-640-x-1136.jpg');
   color: black;
   margin: 10px;
   width: 16.6%;
@@ -192,7 +193,6 @@ body, .container{
   margin-top: -417px;
   margin-right: 16px;
   transform: rotate(-1deg);
-  background: red;
   float:right;
   width: 103.562px;
 }
@@ -202,7 +202,6 @@ body, .container{
   margin-top: -416px;
   margin-right: -72px;
   transform: rotate(9deg);
-  background: red;
   float:right;
   width:103.562px;
 }
@@ -212,7 +211,6 @@ body, .container{
   margin-right: -159px;
   transform: rotate(17deg);
   float: right;
-  background: red;
   width: 103.562px;
 }
 
@@ -220,7 +218,6 @@ body, .container{
   margin-top: -289px;
   margin-right: 10px;
   transform: rotate(8deg);
-  background: red;
   float:right;
   width: 103.562px;
 }
@@ -230,7 +227,6 @@ body, .container{
   margin-top: -289px;
   margin-right: -72px;
   transform: rotate(9deg);
-  background: red;
   float:right;
   width:103.562px;
 }
@@ -240,7 +236,6 @@ body, .container{
   margin-right: -147px;
   transform: rotate(18deg);
   float: right;
-  background: red;
   width: 103.562px;
 }
 
@@ -251,7 +246,7 @@ body, .container{
   margin-top: -352px;
   margin-left: 101px;
   transform: rotate(-17deg);
-  background-color: blue;
+
 }
 
 
@@ -259,21 +254,19 @@ body, .container{
   margin-top: -388px;
   margin-left: 191px;
   transform: rotate(-10deg);
-  background-color: blue;
 }
 
 .card-3{
   margin-top: -372px;
   margin-left: 283px;
   transform: rotate(10deg);
-  background-color: blue;
 }
 
 .card-4{
   margin-top: -245px;
   margin-left: 124px;
   transform: rotate(-28deg);
-  background-color: blue;
+
 }
 
 
@@ -281,19 +274,17 @@ body, .container{
   margin-top: -257px;
   margin-left: 192px;
   transform: rotate(-10deg);
-  background-color: blue;
 }
 
 .card-6{
   margin-top: -239px;
   margin-left: 272px;
   transform: rotate(16deg);
-  background-color: blue;
 }
 
 
 .card img{
   height:139px;
-  width:103px;
+  width:105px;
   border-radius: 9%;
 }
