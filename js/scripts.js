@@ -10,11 +10,18 @@ $(document).ready(function(){
 	var playersHand = [];
 	var dealersHand = [];
 	var theDeck = freshDeck.slice();
+	var currentPlayerTotal = Number($('.total-amount').attr('value'));
+	var betAmount = Number($('.bet-amount').attr('value'));
 
 	/////////////////////////
 	//////EVENT HANDLERS/////
 	/////////////////////////
 	$('.deal-button').click(function(){
+		// $('.message').text("Place your bets!");
+
+
+
+
 		// The deal stuff happens here...
 		// Here, theDeck is still a copy of freshDeck
 		// shuffleDeck();
@@ -22,6 +29,12 @@ $(document).ready(function(){
 		// console.log(theDeck);
 		// console.log(freshDeck);
 		reset();
+
+		// $('.message').text('Shuffling the cards...').fadeout();
+
+		$('.message').text("Place your bets!");
+
+
 
 		// We have a shuffled deck, add the 1 and 3rd card to the playersHand and the DOM
 		// Do the same for the dealer
@@ -90,12 +103,13 @@ $(document).ready(function(){
 	function reset(){
 		// In order to reset the game, we need to:
 		// 1. Reset the deck.
+		$('.message').text("Place your bets!");
 		theDeck = freshDeck.slice();
 		shuffleDeck();
-		// 2. Reset teh player and dealer hand arrays
+		// 2. Reset the player and dealer hand arrays
 		playersHand = [];
 		dealersHand = [];
-		// 3. REset the cards in teh DOM
+		// 3. REset the cards in the DOM
 		$('.card').html('');
 		// 4. Reset the totals for both players
 		$('.dealer-total-number').html('0')
@@ -106,25 +120,46 @@ $(document).ready(function(){
 
 
 	function checkWin(){
+		// var currentPlayerTotal = Number($('.total-amount').attr('value'));
+		// var betAmount = Number($('.bet-amount').attr('value'));
+		var newPlayerTotal
+
+
 		var playerTotal = calculateTotal(playersHand, 'player');
 		var dealerTotal = calculateTotal(dealersHand, 'dealer'); //4
 		var winner = "";
 		// If Player has more than 21. Player Busts.
 		if(playerTotal > 21){
-			winner = "You have busted. Dealer wins.";
+			winner = "You have busted. Dealer wins. Bye-bye ";
+			newPlayerTotal = currentPlayerTotal -= betAmount;
+			console.log(newPlayerTotal);
+
 		}else if(dealerTotal > 21){
-			winner = "Dealer has busted. You win!"
+			winner = "Dealer has busted. You win! Yeah, hello sweet ";
+			newPlayerTotal = currentPlayerTotal += betAmount;
+			console.log(newPlayerTotal);
+
 		}else{
 			// Neither player has busted. See who won...
 			if(playerTotal > dealerTotal){
-				winner = "You beat the dealer!";
+				winner = "You beat the dealer! Yeah, hello sweet ";
+				newPlayerTotal = currentPlayerTotal += betAmount;
+				console.log(newPlayerTotal);
 			}else if(playerTotal < dealerTotal){
-				winner = "The dealer has bested you. We get your money";
+				winner = "The dealer won! Bye-bye ";
+				newPlayerTotal = currentPlayerTotal -= betAmount;
+				console.log(newPlayerTotal);
 			}else{
-				winner = "It's a push!"
+				winner = "PUSH"
+				newPlayerTotal = currentPlayerTotal;
+				$('.message').text(winner);
+
 			}
 		}
-		$('.message').text(winner);
+		$('.message').text(winner + "$" + betAmount + "!");
+		$('.text1').text('$' + newPlayerTotal);
+		// $('.message').text("Won " + newPlayerTotal "!");
+
 	}
 
 	function calculateTotal(hand, who){
@@ -210,4 +245,164 @@ $(document).ready(function(){
 			theDeck[random2] = temp;
 		}
 	}
+
+
+
+var currentPlayerTotal = Number($('.total-amount').attr('value'));
+var betAmount = Number($('.bet-amount').attr('value'));
+
+
+$('#chip4').click(function(){
+	var chip4 = Number($('#chip4').attr('value'));
+	var betTotal
+	var UpdatedTotal
+	// var newTotal = currentPlayerTotal - chip4;
+
+	if(currentPlayerTotal <= 0){
+		$('.message').text("You are out of money, fool! Play and win some more!");
+		$('.text1').text('$' + '0');
+		$('#chip4').off("click");
+		UpdatedTotal = 0;
+		betTotal = betAmount;
+	}else{
+		betTotal = betAmount += chip4;
+		UpdatedTotal = currentPlayerTotal -= chip4;
+
+	}
+
+	console.log(UpdatedTotal);
+	$('.text1').text('$' + UpdatedTotal);
+	$('.text2').text('$' + betTotal);
+	console.log("this chip4 works");
+
+
+});
+
+$('#chip3').click(function(){
+	var chip3 = Number($('#chip3').attr('value'));
+	var betTotal
+	var UpdatedTotal
+	// var newTotal = currentPlayerTotal - chip4;
+
+	if(currentPlayerTotal <= 0){
+		$('.message').text('You are out of money, fool! Play and win some more!');
+		$('.text1').text('$' + '0');
+		$('#chip3').off("click");
+		UpdatedTotal = 0;
+		betTotal = betAmount;
+	}else{
+		betTotal = betAmount += chip3;
+		UpdatedTotal = currentPlayerTotal -= chip3;
+
+	}
+
+	console.log(UpdatedTotal);
+	$('.text1').text('$' + UpdatedTotal);
+	$('.text2').text('$' + betTotal);
+	console.log("this chip3 works");
+
+});
+
+
+
+$('#chip2').click(function(){
+	var chip2 = Number($('#chip2').attr('value'));
+	var betTotal
+	var UpdatedTotal
+	// var newTotal = currentPlayerTotal - chip4;
+
+	if(currentPlayerTotal <= 0){
+		$('.message').text('You are out of money, fool! Play and win some more!');
+		$('.text1').text('$' + '0');
+		$('#chip2').off("click");
+		UpdatedTotal = 0;
+		betTotal = betAmount;
+	}else{
+		betTotal = betAmount += chip2;
+		UpdatedTotal = currentPlayerTotal -= chip2;
+
+	}
+
+	console.log(UpdatedTotal);
+	$('.text1').text('$' + UpdatedTotal);
+	$('.text2').text('$' + betTotal);
+	console.log("this chip2 works");
+
+});
+
+
+$('#chip1').click(function(){
+	var chip1 = Number($('#chip1').attr('value'));
+	var betTotal
+	var UpdatedTotal
+	// var newTotal = currentPlayerTotal - chip4;
+
+	if(currentPlayerTotal <= 0){
+		$('.message').text('You are out of money, fool! Play and win some more!');
+		$('.text1').text('$' + '0');
+		$('#chip1').off("click");
+		UpdatedTotal = 0;
+		betTotal = betAmount;
+	}else{
+		betTotal = betAmount += chip1;
+		UpdatedTotal = currentPlayerTotal -= chip1;
+	}
+
+	console.log(UpdatedTotal);
+	$('.text1').text('$' + UpdatedTotal);
+	$('.text2').text('$' + betTotal);
+	console.log("this chip2 works");
+
+});
+
+$('.double-button').click(function(){
+		var doubleBet
+		var doubleTotal
+
+	if(currentPlayerTotal <= 0){
+		$('.message').text('You are out of money, fool! Play and win some more!');
+		$('.text1').text('$' + '0');
+		$('.double-button').off("click");
+		doubleTotal = 0;
+		doubleBet = betAmount;
+
+	}else{
+		doubleBet = betAmount * 2;
+		doubleTotal = currentPlayerTotal -=(betAmount * 2);
+		}
+		$('.text1').text('$' + doubleTotal);
+		$('.text2').text('$' + doubleBet);
+
+
+});
+
+$('#chipx').click(function(){
+	// var chipx = Number($('#chip1').attr('value'));
+	var betTotal
+	var UpdatedTotal
+	// var newTotal = currentPlayerTotal - chip4;
+
+	// if(currentPlayerTotal <= 0){
+	// 	$('.message').text('You are out of money, fool! Play and win some more!');
+	// 	$('.text1').text('$' + '0');
+	// 	$('#chip1').off("click");
+	// 	UpdatedTotal = 0;
+	// 	betTotal = betAmount;
+	// }else{
+		betTotal = betAmount - betAmount;
+		UpdatedTotal = currentPlayerTotal + betAmount;
+
+
+	console.log(UpdatedTotal);
+	$('.text1').text('$' + UpdatedTotal);
+	$('.text2').text('$' + betTotal);
+	console.log("this chipx works");
+
+});
+
+
+
+
+
+
 });

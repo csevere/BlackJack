@@ -4,6 +4,24 @@
   position: fixed;
   font-style: oblique;
   background: rgba(0, 0, 0, 0.3);
+  left: 432px;
+  text-align: center;
+}
+
+html{
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.message{
+  color: white;
+  font-size: 30px;
+  position: relative;
+  top: 43px;
+  left:559px;
+  font-family:'Bree Serif', serif;
 }
 
 
@@ -13,20 +31,19 @@
   background-size: cover;
   border: 2px solid brown;
   border-radius: 10px;
-  margin-top: 93px;
+  margin-top: 77px;
   padding: -5px 0px 70px;
   margin-left: -3px;
   border-style: ridge;
-  height:532px;
+  height:549px;
   margin-right: 3px;
-
-
 
 }
 
-html, body, .container{
+body, .container{
     height: 100%;
     min-width: 100%;
+    overflow-x: hidden;
 
 }
 
@@ -46,26 +63,26 @@ html, body, .container{
 
 #chip4{
   position: relative;
-  left: 245px;
-  top: 6px;
+  left: 218px;
+  top: -56px;
 }
 
 #chip3{
   position: relative;
   left: 177px;
-  top: 68px;
+  top: -11px;
 }
 
 #chip2{
   position: relative;
   left: 132px;
-  top: 101px;
+  top: 35px;
 }
 
 #chip1{
   position: relative;
   left: 110px;
-  top: 121px;
+  top: 65px;
 }
 
 #chipx{
@@ -76,7 +93,7 @@ html, body, .container{
 
 .btn{
   position: relative;
-  bottom: 129px;
+  bottom: 189px;
   width:76px;
   height: 61px;
   color: white;
@@ -84,7 +101,7 @@ html, body, .container{
   border-style: groove;
   background-color: rgb(64, 64, 64);
   border: 3px solid black;
-  left: 95px;
+  left: 277px;
 
 }
 
@@ -101,19 +118,28 @@ html, body, .container{
 .double-button{
   position: relative;
   /*bottom: 532px;*/
-  top: -560px;
-  margin-left: -95px;
+  top: -594px;
+  margin-left: -274px;
 
 }
 
-.player-total{
+.stand-button{
+  position:relative;
+  left: -203px;
+}
+
+.hit-button{
+  position:relative;
+  left:40px;
+}
+
+.player-total-number{
   font-family: 'Asset', cursive;
   color: white;
   font-size: 30px;
-  font-weight: bold;
   position:relative;
-  top: -360px;
-  left: 254px;
+  top: -493px;
+  left: 290px;
 }
 
 .total-amount{
@@ -121,9 +147,15 @@ html, body, .container{
   color: white;
   font-size: 25px;
   position: relative;
-  left: 96px;
+  left: -126px;
   bottom: 17px;
+}
 
+.bet-amount{
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-size: 25px;
+  position: relative;
 
 }
 
@@ -131,6 +163,7 @@ html, body, .container{
 
 .card{
   height: 141px;
+  width: 150px;
   background-color: #fff;
   color: black;
   margin: 10px;
@@ -144,32 +177,120 @@ html, body, .container{
 
 }
 
-.card-1{
-  margin-top: -262px;
-  margin-left: 101px;
-  transform: rotate(-17deg);
-
+.dealer-total-number{
+  float: right;
+  margin-top: -532px;
+  margin-left: 1198px;
+  font-family: 'Asset', cursive;
+  color: white;
+  font-size: 30px;
 }
 
+
+
+#d1{
+  margin-top: -417px;
+  margin-right: 16px;
+  transform: rotate(-1deg);
+  background: red;
+  float:right;
+  width: 103.562px;
+}
+
+
+#d2{
+  margin-top: -416px;
+  margin-right: -72px;
+  transform: rotate(9deg);
+  background: red;
+  float:right;
+  width:103.562px;
+}
+
+#d3{
+  margin-top: -402px;
+  margin-right: -159px;
+  transform: rotate(17deg);
+  float: right;
+  background: red;
+  width: 103.562px;
+}
+
+#d4{
+  margin-top: -289px;
+  margin-right: 10px;
+  transform: rotate(8deg);
+  background: red;
+  float:right;
+  width: 103.562px;
+}
+
+
+#d5{
+  margin-top: -289px;
+  margin-right: -72px;
+  transform: rotate(9deg);
+  background: red;
+  float:right;
+  width:103.562px;
+}
+
+#d6{
+  margin-top: -275px;
+  margin-right: -147px;
+  transform: rotate(18deg);
+  float: right;
+  background: red;
+  width: 103.562px;
+}
+
+
+
+
+.card-1{
+  margin-top: -352px;
+  margin-left: 101px;
+  transform: rotate(-17deg);
+  background-color: blue;
+}
 
 
 .card-2{
-  margin-top: -295px;
-  margin-left: 163px;
+  margin-top: -388px;
+  margin-left: 191px;
   transform: rotate(-10deg);
+  background-color: blue;
 }
 
 .card-3{
-  margin-top: -286px;
-  margin-left: 237px;
-  transform: rotate(3deg);
+  margin-top: -372px;
+  margin-left: 283px;
+  transform: rotate(10deg);
+  background-color: blue;
 }
 
 .card-4{
-  margin-top: -257px;
-  margin-left: 305px;
-  transform: rotate(11deg);
+  margin-top: -245px;
+  margin-left: 124px;
+  transform: rotate(-28deg);
+  background-color: blue;
 }
+
+
+.card-5{
+  margin-top: -257px;
+  margin-left: 192px;
+  transform: rotate(-10deg);
+  background-color: blue;
+}
+
+.card-6{
+  margin-top: -239px;
+  margin-left: 272px;
+  transform: rotate(16deg);
+  background-color: blue;
+}
+
 
 .card img{
   height:139px;

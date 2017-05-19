@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>BlackJack in jQuery/Javascript</title>
-  <link href="https://fonts.googleapis.com/css?family=Asset|Modak|Lato|Sigmar+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Asset|Modak|Lato|Bree+Serif|Sigmar+One" rel="stylesheet">
   <link rel="stylesheet" type ="text/css" href="css/styles.css"/>
   <link rel="stylesheet" type ="text/css" href="css/bootstrap.min.css"/>
 
@@ -36,24 +36,33 @@
           </div>
       </div> -->
 
-      <div class = "title">
+      <div class = "title text-align center">
         <h1>BLACK JACK</h1>
       </div>
 
+
       <div class = "row">
           <div class = "col-sm-12 the-table">
+
+              <div class = "row">
+                <div class = "col-sm-12 message" name = "message">MESSAGE</div>
+              </div>
+
 
               <div class = "row">
                   <div class = "col-sm-2">
                     <div class = "chips" id = "chipx">
                         <img src="./Images/pokerchip_1.png">
                     </div>
+                    <div class = "bet-amount text2" value = "0">
+                      $0
+                    </div>
                   </div>
               </div>
 
               <div class = "row">
                 <div class = "col-sm-2">
-                  <div class = "chips" id = "chip1">
+                  <div class = "chips" id = "chip1" value = "1" max = "1">
                       <img src="./Images/pokerchip_1.png">
                   </div>
                 </div>
@@ -62,7 +71,7 @@
 
               <div class = "row">
                 <div class = "col-sm-2">
-                  <div class = "chips" id = "chip2">
+                  <div class = "chips" id = "chip2" value = "5" max = "5">
                       <img src="./Images/pokerchip_5.png">
                   </div>
                 </div>
@@ -70,7 +79,7 @@
 
               <div class = "row">
                 <div class = "col-sm-2">
-                  <div class = "chips" id = "chip3">
+                  <div class = "chips" id = "chip3" value = "100" max = "100">
                       <img src="./Images/pokerchip_100.png">
                   </div>
                 </div>
@@ -78,9 +87,9 @@
 
               <div class = "row">
                 <div class = "col-sm-2">
-                  <div class = "chips" id = "chip4">
+                  <div class = "chips" id = "chip4" value = "500" max = "500">
                       <img src="./Images/pokerchip_500.png">
-                      <div class = "total-amount" value = "2500">
+                      <div class = "total-amount text1" value = "2500" max = "2500">
                         $2500
                       </div>
                   </div>
@@ -91,9 +100,7 @@
                 <!-- This is will hold dealer total, and all 6 dealer cards -->
                 <div class = "col-sm-12 player-hand-wrapper">
                     <!-- This is will hold the dealer's total cards (sum of all cards) -->
-                    <div class = "col-sm-2 player-total">
-                       0
-                    </div>
+                    <div class = "col-sm-2 player-total-number">0</div>
 
                     <div class = "col-sm-6 player-cards">
                       <!-- This is 10 cold wide, will divide it up -->
@@ -101,9 +108,29 @@
                       <div class = "card card-2"></div>
                       <div class = "card card-3"></div>
                       <div class = "card card-4"></div>
+                      <div class = "card card-5"></div>
+                      <div class = "card card-6"></div>
+
                     </div>
                 </div>
-            </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-sm-12 dealer-hand-wrapper">
+                    <!-- Dealer Total & Dealer Cards (6 Max) -->
+                    <div class="col-sm-2 dealer-total-number">0</div>
+
+                    <div class="col-sm-10 dealer-cards">
+                      <div class="card card-1" id = "d1"></div>
+                      <div class="card card-2" id = "d2" ></div>
+                      <div class="card card-3" id = "d3"></div>
+                      <div class="card card-4" id = "d4"></div>
+                      <div class="card card-5" id = "d5"></div>
+                      <div class="card card-6" id = "d6"></div>
+
+                    </div>
+                  </div>
+              </div>
 
 
 
@@ -121,9 +148,8 @@
                   </div>
 
                   <div class = "col-sm-2 col-sm-offset-1">
-                      <button class = "btn double-button" id = "double">double</button>
+                      <button class = "btn double-button" id = "double?">double</button>
                   </div>
-
               </div>
 
             </div>
