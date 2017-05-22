@@ -207,40 +207,40 @@ $(document).ready(function(){
 
 		// $('.card').css("visibility", "hidden");
 
-		('.card-1').css("visibility", "visible");
-		('.card-2').css("visibility", "visible");
-		('.card-3').css("visibility", "visible");
-		('.card-4').css("visibility", "visible");
 
+		// ('.card-1').css("visibility", "visible");
+		// ('.card-2').css("visibility", "visible");
+		// ('.card-3').css("visibility", "visible");
+		// ('.card-4').css("visibility", "visible");
 
-
-			$('#d1').css("visibility", "visible");
-			$('#d2').css("visibility", "visible");
-			$('#d3').css("visibility", "visible");
-
-
-
+			// $('#d1').css("visibility", "visible");
+			// $('#d2').css("visibility", "visible");
+			// $('#d3').css("visibility", "visible");  // turn off
 
 		// If Player has more than 21. Player Busts.
 		if(playerTotal > 21){
 			winner = "You have busted. Dealer wins. Bye-bye, ";
 			newPlayerTotal = currentPlayerTotal -= betAmount;
-			console.log(betAmount);
+			// console.log(betAmount);
+			console.log(winner);
 
 		}else if(dealerTotal > 21){
 			winner = "Dealer has busted. You win! Yeah, hello, sweet ";
 			newPlayerTotal = currentPlayerTotal += betAmount;
 
-			console.log(newPlayerTotal);
-			console.log(betAmount);
+			// console.log(newPlayerTotal);
+			// console.log(betAmount);
+			console.log(winner);
 
 		}else{
 			// Neither player has busted. See who won...
 			if(playerTotal > dealerTotal){
 				winner = "You beat the dealer! Yeah, hello, sweet ";
 				newPlayerTotal = currentPlayerTotal += betAmount;
-				console.log(newPlayerTotal);
-				console.log(betAmount);
+				// console.log(newPlayerTotal);
+				// console.log(betAmount);
+				console.log(winner);
+
 			}else if(playerTotal < dealerTotal){
 				winner = "The dealer won! Bye-bye, ";
 				newPlayerTotal = currentPlayerTotal -= betAmount;
@@ -254,6 +254,7 @@ $(document).ready(function(){
 			}
 		}
 		$('.message').text(winner + "$" + betAmount + "!" + " Place your bets.");
+		console.log(winner);
 		$('.text1').text('$' + newPlayerTotal);
 
 		// $('.text2').text('$' + "0")

@@ -1,11 +1,20 @@
-.title{
+.item-title{
   font-family: 'Asset', cursive;
-  color: gold;
+  color: white;
   position: fixed;
   font-style: oblique;
-  background: rgba(0, 0, 0, 0.3);
-  left: 432px;
+  /*background: rgba(0, 128, 255, 0.2);*/
+  left: 426px;
+  top: -8px;
   text-align: center;
+  height: 100px;
+  text-shadow: 6px -4px 10px rgba(237,237,237,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px #00ffff , 0 0 2px #00ffff , 0 0 70px #f7eaf5 , 0 0 80px #2753c4 , 0 0 100px #ededf7 ;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+
+
 }
 
 html{
@@ -13,77 +22,140 @@ html{
   max-width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
+  -webkit-perspective: 150px; /* Chrome, Safari, Opera  */
+  perspective: 572px;
+}
+
+
+.parent-character{
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+}
+
+
+#item-character{
+  flex-basis: 40%;
+  align-self: flex-start;
+  /*width:100px;
+  height: 400px;*/
+  margin-top: 596px;
+  position: absolute;
+  left: 67px;
+}
+
+#item-character2{
+  float: right;
+  width:100px;
+  height: 400px;
+  margin-top: 90px;
+  position: absolute;
+  margin-left: 900px;
+
+
+
 }
 
 .message{
   color: white;
   font-size: 30px;
   position: relative;
-  top: 43px;
-  left:-427px;
+  top: 70px;
+  left:-775px;
   font-family:'Bree Serif', serif;
   text-align: right;
 }
 
 
+.parent-table{
+  display:flex;
+
+}
 
 .the-table{
-  background: url('https://ak8.picdn.net/shutterstock/videos/743893/thumb/7.jpg') center center fixed;
+  /*background: url('https://static.vecteezy.com/system/resources/previews/000/118/578/non_2x/stone-background-vector.jpg') center center fixed;*/
+  background: rgba(0, 128, 255, 0.3);
   background-size: cover;
-  border: 2px solid brown;
+  border: 4px solid #d9edf7;
   border-radius: 10px;
-  margin-top: 77px;
+  margin-top: 100px;
   padding: -5px 0px 70px;
-  margin-left: -3px;
+  margin-left: 386px;
   border-style: ridge;
-  height:549px;
+  height:450px;
   margin-right: 3px;
-
+  width: 600px;
+  -webkit-transform: rotateX(35deg);
+ transform: rotateX(45deg);
+ /*box-shadow: 10px 10px 5px grey; */
+ box-shadow: -1px 6px 10px rgba(237,237,237,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px #00ffff , 0 0 2px #00ffff , 0 0 70px #f7eaf5 , 0 0 80px #2753c4 , 0 0 100px #ededf7 ;
+ -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+ -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+ -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+ transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+ perspective: 572px;
 }
 
 body, .container{
     height: 100%;
     min-width: 100%;
     overflow-x: hidden;
+    overflow-y: hidden;
 
 }
 
 
 .container{
-    background: url('http://s3.amazonaws.com/lbn-s3/2016/12/01140239/shutterstock_102526172.jpg') no-repeat center center fixed;
+    background: url('https://images7.alphacoders.com/551/551768.jpg') no-repeat center center fixed;
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
    background-size: cover;
 }
 
-.chips img{
+.parent-chips{
+  display: flex;
+  flex-direction: row;
+
+
+}
+.item-chips img{
   display:block;
-  width: 100px;
+  width: 75px;
+  height: 75px;
+  -webkit-transform: rotateX(45deg);
+ transform: rotateX(8deg);
+ transform:rotateY(45deg);
+  justify-content: flex-start;
+  align-self: flex-start;
 }
 
 #chip4{
   position: relative;
-  left: 218px;
-  top: -56px;
+  left: 184px;
+  top: 28px;
 }
+
 
 #chip3{
   position: relative;
-  left: 177px;
-  top: -11px;
+  left: 91px;
+  top: 105px;
 }
 
 #chip2{
   position: relative;
-  left: 132px;
-  top: 35px;
+  left: 1px;
+  top: 340px;
 }
 
 #chip1{
   position: relative;
-  left: 110px;
-  top: 65px;
+  left: 140px;
+  top: -101px;
 }
 
 #chipx{
@@ -181,7 +253,7 @@ body, .container{
 .dealer-total-number{
   float: right;
   margin-top: -532px;
-  margin-left: 1198px;
+  margin-left: 600px;
   font-family: 'Asset', cursive;
   color: white;
   font-size: 30px;
@@ -288,3 +360,18 @@ body, .container{
   width:105px;
   border-radius: 9%;
 }
+
+
+
+/*
+/* Large desktop */
+/*@media (min-width: 1200px) { ... }*/
+
+/* Portrait tablet to landscape and desktop */
+/*@media (min-width: 768px) and (max-width: 979px) { ... }*/
+
+/* Landscape phone to portrait tablet */
+/*@media (max-width: 767px) { ... }*/
+
+/* Landscape phones and down */
+/*@media (max-width: 480px) { ... }*/
